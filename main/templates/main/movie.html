@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Видео{% endblock title %}
+{% block meta %}{% endblock meta %}
+{% block content %}
+<section class="movie">
+    <div class="container">
+        <h2 class="movie_text">Видеогалерея</h2>
+        <div class="movie_cards">
+        {% for movie in movie_list %}
+            <div class="movie_card">
+                <img class="movie_img" src="{{movie.get_title_image.image.url}}" alt="">
+                <h3 class="movie_title">{{movie.name}}</h3>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="vet_buttons" id="news_btn">
+            <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                        src="{% static 'img/button1.png' %}" alt=""></button></a>
+            <a class="link active" href=""><button class="vet_button active">1</button></a>
+            <a class="link active" href=""><button class="vet_button">..</button></a>
+            <a class="link active" href=""><button class="vet_button">4</button></a>
+            <a class="link active" href=""><button class="vet_button">5</button></a>
+            <a class="link active" href=""><button class="vet_button">6</button></a>
+            <a class="link active" href=""><button class="vet_button">..</button></a>
+            <a class="link active" href=""><button class="vet_button">8</button></a>
+            <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                        src="{% static 'img/button2.png' %}" alt=""></button></a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

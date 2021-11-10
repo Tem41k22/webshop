@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Бренды{% endblock title %}
+{% block meta %}{% endblock meta %}
+{% block content %}
+<section class="brand">
+    <div class="container">
+        <h2 class="brand_text">Dymind</h2>
+        <div class="brand_block">
+            <div class="brand_block2">
+                <div class="brand_logo">
+                    <img class="brand_image2" src="{% static 'img/dymind.png' %}" alt="">
+                    <a class="brand_a" href="">www.dymind.com.cn</a>
+                </div>
+                <h4 class="brand_subtext">Shenzhen Dymind Biotechnology Co., Ltd — высокотехнологичное предприятие,
+                    специализирующееся на научных исследованиях и опытно-конструкторских разработках и производстве
+                    лабораторного оборудования. Основная продукция компании — гематологические анализаторы, аппараты ИВЛ
+                    для
+                    домашнего использования и т. д.</h4>
+            </div>
+        </div>
+        <div class="brand_cards">
+            {% for brand in brand_list %}
+                <div class="brand_card">
+                    <div class="brand_like">
+                        <img class="brand_img0" src="{{brand.get_title_image.image.url}}" alt="">
+                        <button class="brand_btn0"><img class="brand_img" src="{% static 'img/like.png' %}"
+                                alt=""></button>
+                    </div>
+                    <h4 class="brand_like_text">{{brand.description3}}</h4>
+                    <h3 class="brand_like_title">{{brand.name}}</h3>
+                    <h4 class="brand_like_price">{% if brand.price == 0 %}Цена по запросу
+                        {% else %}{{brand.price}}
+                        ₽{% endif %}</h4>
+                    <div class="brand_nal">
+                        <h4 class="brand_like_subtitle">{% if brand.available %}<img class="brand_img2"
+                                src="{% static 'img/vec.png' %}" alt="">В наличии {% else %}Нет в наличии{% endif %}
+                        </h4>
+                        <button class="brand_btn3"><img class="brand_img4" src="{% static 'img/corsina.png' %}"
+                                alt=""></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

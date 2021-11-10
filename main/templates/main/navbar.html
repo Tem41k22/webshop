@@ -1,0 +1,49 @@
+{% load static %}
+<nav>
+    <div class="container">
+        <div class="logo_item">
+            <div class="logo_block">
+                <a href="#"><img class="logo_img1" src="{% static 'img/logo.png' %}" alt=""></a>
+                <h4 class="logo_text">ВСЁ ДЛЯ УСПЕШНОГО
+                    ВЕТЕРИНАРНОГО БИЗНЕСА</h4>
+            </div>
+            <div class="logo_card">
+                <img class="logo_img2" src="{% static 'img/phone.png' %}" alt="">
+                <h4 class="logo_title">+7 (499) 130-05-25</h4>
+                <h3 class="logo_subtitle">Заказать звонок</h3>
+                <div class="logo_line"></div>
+                <h3 class="logo_info">info@diakonvet.ru</h3>
+            </div>
+            <div class="logo_contact">
+                <a href=""><img class="logo_img3" src="{% static 'img/man.png' %}" alt=""></a>
+                <div class="logo_line1"></div>
+                <a class="logo_img4" href="{% url 'cart:cart' %}"><img src="{% static 'img/basket2.png' %}" alt=""></a>
+                <button class="logo_btn"><img class="logo_img5" src="{% static 'img/search.png' %}" alt=""></button>
+            </div>
+        </div>
+    </div>
+    <div class="logo_spisok">
+        <div class="container">
+            <ul class="logo_ul">
+                <li class="logo_a"><a href="{% url 'main:index' %}">Компания</a></li>
+                <li class="logo_a"><a href="{% url 'main:catalog' %}">Каталог</a></li>
+                <li class="logo_a"><a href="{% url 'main:service' %}">Сервис</a></li>
+                <li class="logo_a"><a href="{% url 'main:discount' %}">Акции</a></li>
+                <li class="logo_a"><a href="{% url 'main:delivery' %}">Доставка и оплата</a></li>
+                <li class="logo_a"><a href="{% url 'main:brand' %}">Бренды</a></li>
+                <li class="logo_a"><a href="{% url 'main:news' %}">Новости</a></li>
+                <li class="logo_a"><a href="{% url 'main:topics' %}">Статьи</a></li>
+                <li class="logo_a"><a href="{% url 'main:movie' %}">Видео</a></li>
+                <li class="logo_a"><a href="{% url 'main:contacts' %}">Контакты</a></li>
+            </ul>
+            <div class="search_logo">
+                <form class="search_form" action="{% url 'main:search' %}" metod="GET">
+                    <img class="logo_img_search" src="{% static 'img/search2.png' %}" alt="">
+                    <input class="search_input" type="text" name="query" placeholder="|">
+                </form>
+                <button class="search_btn1"><img class="logo_img_search1" src="{% static 'img/btn01.png' %}"
+                        alt=""></button>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Корзина{% endblock title %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock meta %}
+{% block content %}
+<section class="cart">
+    <div class="container">
+        <div class="cart_block">
+            <h2 class="cart_text">Корзина</h2>
+            <a class="cart_btn"href="{% url 'cart:cart_clear' %}">Очистить корзину</a>
+        </div>
+        <div class="cart_header">
+            <h3 class="cart_name" id="name1">НАИМЕНОВАНИЕ</h3>
+            <h3 class="cart_name" id="name2">КОЛИЧЕСТВО</h3>
+            <h3 class="cart_name" id="name3">ЦЕНА</h3>
+            <h3 class="cart_name" id="name4">СУММА</h3>
+        </div>
+        <div class="cart_cards">
+            {% for item in cart %}
+            {% with product=item.product %}
+            <div class="cart_card">
+                <img class="cart_img" src="{{product.get_title_image.image.url}}" alt="">
+                <h3 class="cart_title">{{product.name}} <br> <span>{{product.description}}</span>
+                </h3>
+                <div class="det_form">
+                    <form method="POST" class="detail_form" action="{% url 'cart:cart_add' product.id %}">
+                        <input type="hidden" name="update" value="True">
+                        {% csrf_token %}
+                        <button class="form_btn1">-</button>
+                        <input class="detail_input" type="text" value={{item.quantity}} name="quantity">
+                        <button class="form_btn">+</button>
+                    </form>
+                    
+                </div>
+                <h3 class="cart_price" id="price1">{% if product.price == 0 %}Цена по запросу
+                    {% else %}{{product.price}}
+                    ₽{% endif %}</h3>
+                <h3 class="cart_price" id="price2">
+                    {{item.total_price}}
+                    ₽</h3>
+                <a class="cart_btn1" href="{% url 'cart:cart_remove' product.id %}"><img class="cart_img1" src="{% static 'img/btn1.png' %}" alt=""></a>
+            </div>
+            {% endwith %}
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<section class="promo">
+    <div class="container">
+        <div class="promo_card">
+            <h4 class="promo_text">Введите промокод для скидки:</h4>
+            <div class="promo_block">
+                <div class="promo_line">
+                    <input class="promo_input" type="text" placeholder="">
+                </div>
+                <h3 class="promo_title"><span>Итого:</span> <br>{{cart.get_total_price}} ₽</h3>
+                <button class="promo_btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

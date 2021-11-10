@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Каталог{% endblock title %}
+{% block meta %}{% endblock meta %}
+{% block content %}
+<section class="catalog">
+    <div class="container">
+        <div class="vet_block">
+            <h2 class="vet_text">{% if category %}{{category.name}}
+                {% else %} Каталог
+                {% endif %}</h2>
+            <a class="vet_btn" href="{% url 'cart:cart' %}" id="detail1"><img src="{% static 'img/basket.png' %}"
+                    alt=""></a>
+        </div>
+        <div class="vet-block">
+            <div class="vet_spisok">
+                <ul class="vet_ul">
+                    <li class="vet_li" id="Vet"><img class="vet_image" src="{% static 'img/vet1.png' %}"
+                            alt="">Оборудование</li>
+                    <div class="vet_line"></div>
+                    {% for category in categories %}
+                    <li class="vet_li"><a href="{{category.get_absolute_url}}">{{category.name}}</a></li>
+                    <div class="vet_line"></div>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="vet-card">
+                <div class="vet_sortirovka">
+                    <h3 class="vet_sort_text">Сортировать по: <span>новизне</span></h3>
+                    <h3 class="vet_sort_title">Отображение 1–12 из 94 результатов</h3>
+                </div>
+                <div class="vet_cards">
+                    {% for product in products %}
+                    <div class="vet_card">
+                        <div class="vet_like">
+                            <img class="vet_img0" src="{{product.get_title_image.image.url}}" alt="">
+                            <button class="vet_btn0"><span><img class="vet_img" src="{% static 'img/like.png' %}"
+                                        alt=""></span></button>
+                        </div>
+                        <h4 class="vet_like_text">{{product.category.name}}</h4>
+                        <h3 class="vet_like_title"><a
+                                href="{% url 'main:product_detail' product.id product.slug %}">{{product.name}}</a></h3>
+                        <h4 class="vet_like_price">{% if product.price == 0 %}Цена по запросу
+                            {% else %}{{product.price}}
+                            ₽{% endif %}</h4>
+                        <div class="vet_nal">
+                            <h4 class="vet_like_subtitle">{% if product.available %}<img class="vet_img2"
+                                    src="{% static 'img/vec.png' %}" alt="">В наличии {% else %}Нет в наличии{% endif %}
+                            </h4>
+                            <form class="quantity_form" method="POST" action="{% url 'cart:cart_add' product.id %}">
+                                <div class="quantity_product">
+
+                                    <input type="text" name="quantity" id="quantityInp" value="1" pattern="[0-9]*"
+                                        required="">
+                                </div>
+                                <button class="vet_btn3"><img class="vet_img4" src="{% static 'img/corsina.png' %}"
+                                        alt=""></button>
+                                {% csrf_token %}
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="vet_buttons">
+                    <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                                src="{% static 'img/button1.png' %}" alt=""></button></a>
+                    <a class="link active" href=""><button class="vet_button active">1</button></a>
+                    <a class="link active" href=""><button class="vet_button">..</button></a>
+                    <a class="link active" href=""><button class="vet_button">4</button></a>
+                    <a class="link active" href=""><button class="vet_button">5</button></a>
+                    <a class="link active" href=""><button class="vet_button">6</button></a>
+                    <a class="link active" href=""><button class="vet_button">..</button></a>
+                    <a class="link active" href=""><button class="vet_button">8</button></a>
+                    <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                                src="{% static 'img/button2.png' %}" alt=""></button></a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock content %}

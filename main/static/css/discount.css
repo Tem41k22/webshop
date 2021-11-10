@@ -1,0 +1,48 @@
+.dis {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.dis_text {
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+.dis_cards {
+    display: grid;
+    grid-template-columns: 570px 570px;
+    grid-gap: 30px 30px;
+}
+
+.dis_card {
+    width: 570px;
+    height: 400px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+}
+
+.dis_title {
+    width: 450px;
+    height: 55px;
+    padding-top: 25px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.dis_subtitle {
+    padding-left: 30px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #383A3C;
+    padding-right: 35px;
+}
+
+#news_btn{
+    display: flex;
+    justify-content: center;
+    align-items: ce
+}

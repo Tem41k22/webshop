@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Поиск{% endblock title %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock meta %}
+{% block content %}
+<section class="search">
+    <div class="container">
+        <div class="search_cards">
+            {% for product in products %}
+            <div class="search_card">
+                <img class="search_img" src="{{product.get_title_image.image.url}}" alt="">
+                <h3 class="search_text">{{product.description}}</h3>
+                <h2 class="search_price">{% if product.price == 0 %}Цена по запросу
+                    {% else %}{{product.price}}
+                    ₽{% endif %}</h2>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="search_block">
+        <button class="search_btn">Смотреть все результаты поиска</button>
+    </div>
+</section>
+{% endblock content %}

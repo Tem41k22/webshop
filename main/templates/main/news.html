@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Новости{% endblock title %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% endblock meta %}
+{% block content %}
+<section class="news">
+    <div class="container">
+        <h2 class="news_text">Новости</h2>
+        <div class="news_cards">
+            {% for news in news_list %}
+            <div class="news_card">
+                <img class="news_img" src="{{news.get_title_image.image.url}}" alt="">
+                <h3 class="news_title">{{news.name}}</h3>
+                <h4 class="news_subtitle">{{news.description}}
+                </h4>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="vet_buttons" id="news_btn">
+            <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                        src="{% static 'img/button1.png' %}" alt=""></button></a>
+            <a class="link active" href=""><button class="vet_button active">1</button></a>
+            <a class="link active" href=""><button class="vet_button">..</button></a>
+            <a class="link active" href=""><button class="vet_button">4</button></a>
+            <a class="link active" href=""><button class="vet_button">5</button></a>
+            <a class="link active" href=""><button class="vet_button">6</button></a>
+            <a class="link active" href=""><button class="vet_button">..</button></a>
+            <a class="link active" href=""><button class="vet_button">8</button></a>
+            <a class="link active" href=""><button class="vet_button"><img class="vet_btn1"
+                        src="{% static 'img/button2.png' %}" alt=""></button></a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

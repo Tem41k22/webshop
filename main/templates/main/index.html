@@ -1,0 +1,471 @@
+{% extends 'main/base.html' %} {% comment %} В текущем файле использовать выбранный шаблон {% endcomment %}
+{% load static %} {% comment %} Подключает использование всех цсс жс {% endcomment %}
+{% block title %}ДИАКОН-BET{% endblock title %}
+{% block meta %}{% endblock meta %}
+{% block content %}
+<header>
+    <img class="header_bg_img" src="{% static 'img/bg.png' %}" alt="">
+    <div class="container">
+        <div class="header_card">
+            <h1 class="header_text">Широкий спектр товаров для клиник и лабораторий</h1>
+            <div class="header_block">
+                <img class="header_image" src="{% static 'img/bag.png' %}" alt="">
+                <p class="header_title">Ветеринарное оборудование
+                    и расходные материалы к ним</p>
+            </div>
+            <div class="header_btns">
+                <button class="header_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="header_btn2"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+            <ul class="header_ul">
+                <li class="header_li">
+                    <button class="header_li_button"></button>
+                </li>
+                <li class="header_li">
+                    <button class="header_li_button"></button>
+                </li>
+                <li class="header_li">
+                    <button class="header_li_button"></button>
+                </li>
+                <li class="header_li">
+                    <button class="header_li_button"></button>
+                </li>
+            </ul>
+            <a class="header_btn_basket" href="{% url 'cart:cart' %}" id="detail1"><img src="{% static 'img/basket.png' %}" alt=""></a>
+        </div>
+    </div>
+</header>
+<section class="product">
+    <div class="container">
+        <div class="product_text">
+            <h2 class="product_title">Товары и услуги</h2>
+            <h3 class="product_subtitle">Компания «ДИАКОН-ВЕТ» поставляет ветеринарную продукцию, предлагая комплексное
+                оснащение клиник и лабораторий оборудованием, реагентами и расходными материалами, включая
+                послепродажное сервисное обслуживание.​</h3>
+        </div>
+        <div class="product_cards">
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img1.png' %}" alt="">
+                <h4 class="product_description">Лабораторная диагностика</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img2.png' %}" alt="">
+                <h4 class="product_description">Функциональная диагностика</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img3.png' %}" alt="">
+                <h4 class="product_description">Терапия и хирургия</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img4.png' %}" alt="">
+                <h4 class="product_description">Общелабораторное оборудование</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img5.png' %}" alt="">
+                <h4 class="product_description">Сервис</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+            <div class="product_card">
+                <img class="product_img" src="{% static 'img/img1.png' %}" alt="">
+                <h4 class="product_description">Лабораторная диагностика</h4>
+                <div class="product_wrapper">
+                    <h4 class="wrapper_text">Вся продукция</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hits">
+    <div class="container">
+        <div class="hits_block">
+            <h2 class="hits_text">Хиты продаж</h2>
+            <div class="hits_buttons">
+                <button class="hits_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="hits_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="hits_cards">
+            <div class="hits_card">
+                <img class="hits_img" src="{% static 'img/hit1.png' %}" alt="">
+                <h3 class="hits_title"><a href="">Автоматический гематологический анализатор DF50 Vet</a></h3>
+                <h4 class="hits_subtitle">Наш флагман из приборов по гематологии</h4>
+            </div>
+            <div class="hits_card">
+                <img class="hits_img" src="{% static 'img/hit2.png' %}" alt="">
+                <h3 class="hits_title"><a href="">Биохимический экспресс-анализатор Skyla VB1</a></h3>
+                <h4 class="hits_subtitle">Очень маржинальный наш прибор, продавать сплошное удовольствие!</h4>
+            </div>
+            <div class="hits_card">
+                <img class="hits_img" src="{% static 'img/hit2.png' %}" alt="">
+                <h3 class="hits_title"><a href="">Биохимический экспресс-анализатор Skyla VB1</a></h3>
+                <h4 class="hits_subtitle">Очень маржинальный наш прибор, продавать сплошное удовольствие!</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="auto">
+    <div class="container">
+        <div class="auto_block">
+            <h2 class="auto_text">Хиты продаж</h2>
+            <div class="auto_buttons">
+                <button class="auto_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="auto_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="auto_cards">
+            <div class="auto_card">
+                <img class="auto_img" src="{% static 'img/hit1.png' %}" alt="">
+                <h3 class="auto_title"><a href="">Автоматический гематологический анализатор DF50 Vet</a></h3>
+                <h4 class="auto_subtitle">Наш флагман из приборов по гематологии</h4>
+            </div>
+            <div class="auto_card">
+                <img class="auto_img" src="{% static 'img/hit2.png' %}" alt="">
+                <h3 class="auto_title"><a href="">Биохимический экспресс-анализатор Skyla VB1</a></h3>
+                <h4 class="auto_subtitle">Очень маржинальный наш прибор, продавать сплошное удовольствие!</h4>
+            </div>
+            <div class="auto_card">
+                <img class="auto_img" src="{% static 'img/hit2.png' %}" alt="">
+                <h3 class="auto_title"><a href="">Автоматический гематологический анализатор DF50 Vet</a></h3>
+                <h4 class="auto_subtitle">Наш флагман из приборов по гематологии</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="discount">
+    <div class="container">
+        <div class="discount_block">
+            <h2 class="discount_text">Акции</h2>
+            <div class="discount_buttons">
+                <button class="discount_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="discount_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="discount_cards">
+            <div class="discount_card">
+                <img class="discount_img" src="{% static 'img/dis1.png' %}" alt="">
+                <h3 class="discount_title">XXIX Московский Международный Ветеринарный Конгресс</h3>
+            </div>
+            <div class="discount_card">
+                <img class="discount_img" src="{% static 'img/dis2.png' %}" alt="">
+                <h3 class="discount_title">Программа повышения квалификации “Биохимические исследования”</h3>
+            </div>
+            <div class="discount_card">
+                <img class="discount_img" src="{% static 'img/dis3.png' %}" alt="">
+                <h3 class="discount_title">Семинар “Современные подходы в лабораторной диагностике”</h3>
+            </div>
+            <div class="discount_card">
+                <img class="discount_img" src="{% static 'img/dis4.png' %}" alt="">
+                <h3 class="discount_title">Выставка ЗООИНДУСТРИЯ 2021</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="app">
+    <div class="container">
+        <div class="app_block">
+            <div class="app_card">
+                <h1 class="app_text">Получите <a href="">БЕСПЛАТНО</a> методические рекомендации по применению наборов
+                    реагентов «ДиаВетТест»</h1>
+                <h4 class="app_description">Для биохимических исследований сыворотки (плазмы) крови животных на
+                    автматическом
+                    анализаторе</h4>
+            </div>
+            <div class="app_card2">
+                <h2 class="app_title">Заявка</h2>
+                <h3 class="app_subtitle">Заполните Ваши контактные данные и мы отправим «Методические рекомендации»</h3>
+                <form class="app_form" action="">
+                    <div class="app_line">
+                        <input class="app_input" type="text" placeholder="Имя">
+                    </div>
+                    <div class="app_line">
+                        <input class="app_input" type="email" placeholder="E-mail">
+                    </div>
+                    <div class="app_line">
+                        <input class="app_input" type="text" placeholder="Телефон">
+                    </div>
+                    <div class="app_square">
+                        <div class="app_captcha"></div>
+                        <button class="app_btn">Отправить</button>
+                    </div>
+                    <input class="app_box" type="checkbox" id="Check">
+                    <label for="Check"><span>Нажимая кнопку «Отправить», я даю свое <a href="">согласие на обработку
+                                моих
+                                персональных
+                                данных</a>, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О
+                            персональных
+                            данных»,
+                            на условиях и для целей, определенных в Согласии на обработку персональных
+                            данных</span></label>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="delivery">
+    <div class="container">
+        <div class="delivery_block">
+            <h2 class="delivery_text">Новости</h2>
+            <div class="delivery_buttons">
+                <button class="delivery_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="delivery_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="delivery_cards">
+            <div class="delivery_card">
+                <img class="delivery_img" src="{% static 'img/dis1.png' %}" alt="">
+                <h3 class="delivery_title">XXIX Московский Международный Ветеринарный Конгресс</h3>
+            </div>
+            <div class="delivery_card">
+                <img class="delivery_img" src="{% static 'img/dis2.png' %}" alt="">
+                <h3 class="delivery_title">Программа повышения квалификации “Биохимические исследования”</h3>
+            </div>
+            <div class="delivery_card">
+                <img class="delivery_img" src="{% static 'img/dis3.png' %}" alt="">
+                <h3 class="delivery_title">Семинар “Современные подходы в лабораторной диагностике”</h3>
+            </div>
+            <div class="delivery_card">
+                <img class="delivery_img" src="{% static 'img/dis4.png' %}" alt="">
+                <h3 class="delivery_title">Выставка ЗООИНДУСТРИЯ 2021</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text">
+    <div class="container">
+        <div class="block_text">
+            <h3 class="text_title">Современное ветеринарное оборудование – это специализированные приборы и аппараты для
+                диагностики и лечения заболеваний, адаптированные для оказания медицинской помощи животным. ООО
+                «ДИАКОН-ВЕТ»
+                предлагает купить оборудование для ветеринарной клиники в Москве. В нашем каталоге представлен широкий
+                ассортимент лабораторных и диагностических приборов, необходимых расходников для анализаторов,
+                медицинского
+                оборудования для операционных и терапии животных. Это — техника, которая поможет ветеринарному врачу
+                поставить точный диагноз и провести эффективное лечение.</h3>
+            <h3 class="text_title">Современное ветеринарное оборудование – это специализированные приборы и аппараты для
+                диагностики и лечения заболеваний, адаптированные для оказания медицинской помощи животным. ООО
+                «ДИАКОН-ВЕТ»
+                предлагает купить оборудование для ветеринарной клиники в Москве. В нашем каталоге представлен широкий
+                ассортимент лабораторных и диагностических приборов, необходимых расходников для анализаторов,
+                медицинского
+                оборудования для операционных и терапии животных. Это — техника, которая поможет ветеринарному врачу
+                поставить точный диагноз и провести эффективное лечение.</h3>
+        </div>
+    </div>
+</section>
+<section class="rec">
+    <div class="container">
+        <div class="rec_block">
+            <h2 class="rec_text">Рекомендации по выбору оборудования</h2>
+            <div class="rec_buttons">
+                <button class="rec_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="rec_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <h3 class="rec_title">Чтобы купить подходящую модель оборудования, вы можете отправить нам коммерческое
+            предложение</h3>
+        <div class="rec_card">
+            <h3 class="rec_subtitle">Чтобы купить подходящую модель оборудования, вы можете отправить нам коммерческое
+                предложение. Узнать все подробности о ценах, характеристиках товаров, условиях сделки и доставке в
+                другие регионы РФ можно по указанному номеру телефона или воспользовавшись окном обратной связи.</h3>
+        </div>
+    </div>
+</section>
+<section class="topics">
+    <div class="container">
+        <h2 class="topics_text">Статьи</h2>
+        <div class="topics_cards">
+            <div class="topics_card">
+                <img class="topics_img" src="{% static 'img/image1.png' %}" alt="">
+                <h3 class="topics_title">Рекомендации по техническому обслуживанию лабораторного оборудования</h3>
+                <h4 class="topics_subtitle">После пусконаладки и ввода в эксплуатацию лабораторное оборудование
+                    необходимо периодически проверять и обслуживать.</h4>
+                <div class="topics_line">
+                    <p class="topics_description">Действует до: <span>26 апреля 2021</span> </p>
+                </div>
+            </div>
+            <div class="topics_card">
+                <img class="topics_img" src="{% static 'img/image2.png' %}" alt="">
+                <h3 class="topics_title">Миниатюризация как тенденция в ветеринарной функциональной диагностике</h3>
+                <h4 class="topics_subtitle">До появления инструментов функциональной диагностики проверить состояние
+                    того
+                    или иного органа не всегда было возможно без хирургического вмешательства.</h4>
+                <div class="topics_line">
+                    <p class="topics_description">Действует до: <span>28 апреля 2021</span> </p>
+                </div>
+            </div>
+            <div class="topics_card">
+                <img class="topics_img" src="{% static 'img/image3.png' %}" alt="">
+                <h3 class="topics_title">Преимущества газового наркоза перед инъекционным</h3>
+                <h4 class="topics_subtitle">В ветеринарии используется два основных вида наркоза: инъекционный и
+                    газовый.
+                </h4>
+                <div class="topics_line">
+                    <p class="topics_description">Действует до: <span>26 апреля 2021</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="movie">
+    <div class="container">
+        <div class="movie_block">
+            <h2 class="movie_text">Видео</h2>
+            <div class="movie_buttons">
+                <button class="movie_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="movie_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="movie_cards">
+            <div class="movie_card">
+                <img class="movie_img" src="{% static 'img/video1.png' %}" alt="">
+                <h3 class="movie_title">Участие в Национальной Ветеринарной Конференции</h3>
+            </div>
+            <div class="movie_card">
+                <img class="movie_img" src="{% static 'img/video2.png' %}" alt="">
+                <h3 class="movie_title">Основы использования биохимического анализатора Skyla VB1</h3>
+            </div>
+            <div class="movie_card">
+                <img class="movie_img" src="{% static 'img/video3.png' %}" alt="">
+                <h3 class="movie_title">Пуско-наладка 5-diff гематологического анализатора DF-50</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="brands">
+
+    <div class="container">
+        <div class="brands_block">
+            <h2 class="brands_text">Бренды</h2>
+            <h3 class="brands_title">У нас Вы можете купить ветеринарное оборудование ведущих производителей из Китая,
+                Южной Кореи, Испании и т.д.</h3>
+            <div class="brands_buttons">
+                <button class="brands_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="brands_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="brands_cards">
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/1.png' %}" alt="">
+            </div>
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/2.png' %}" alt="">
+            </div>
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/3.png' %}" alt="">
+            </div>
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/4.png' %}" alt="">
+            </div>
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/5.png' %}" alt="">
+            </div>
+            <div class="brands_card">
+                <img class="brands_img" src="{% static 'img/6.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="work">
+    <div class="container">
+        <h1 class="work_text">Сотрудничая с нами, Вы получаете</h1>
+        <div class="work_cards">
+            <div class="work_card">
+                <img class="work_img" src="{% static 'img/work1.png' %}" alt="">
+                <h3 class="work_title" id="t1">Индивидуальный подход</h3>
+                <h4 class="work_subtitle">к каждому заказчику</h4>
+            </div>
+            <div class="work_card" id="card1">
+                <img class="work_img" src="{% static 'img/work2.png' %}" alt="">
+                <h3 class="work_title" id="t2">Скидку при комплексном оснащении</h3>
+                <h4 class="work_subtitle" id="st2">до 20%</h4>
+            </div>
+            <div class="work_card">
+                <img class="work_img" src="{% static 'img/work3.png' %}" alt="">
+                <h3 class="work_title" id="t3">Рассрочка
+                    платежа</h3>
+                <h4 class="work_subtitle" id="st3">на дорогостоящее оборудование</h4>
+            </div>
+            <div class="work_card">
+                <img class="work_img" src="{% static 'img/work4.png' %}" alt="">
+                <h3 class="work_title" id="t4">Послепродажное обслуживание</h3>
+                <h4 class="work_subtitle">на все приборы</h4>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews">
+    <div class="container">
+        <div class="reviews_block">
+            <h2 class="reviews_text">Рекомендации и благодарности</h2>
+            <div class="reviews_buttons">
+                <button class="reviews_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="reviews_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="reviews_card">
+            <div class="reviews_item">
+                <div class="reviews_girl">
+                    <img class="reviews_img" src="{% static 'img/girl.png' %}" alt="">
+                    <h3 class="reviews_title">Истомина Т. А.</h3>
+                    <h4 class="reviews_subtitle">Клиника “Белый клык”</h4>
+                </div>
+                <div class="reviews_girl2">
+                    <img class="reviews_img2" src="{% static 'img/girl2.png' %}" alt="">
+                    <h3 class="reviews_description">Анализатор электролитов i-Smart 30 Vet находился на апробации в
+                        ветеринарной клинике “Белвй клык” с 15 апреля по 15 мая 2015 года. За время апробации проявил
+                        себя как надежный и удобный в использовании анализатор. Прибор не требует для работы специальных
+                        навыков от оператора и может быть успешно использован сотрудником ветеринарной лаборатории или
+                        клиники после прохождения краткого обучения. Во время анализа на экране отображаютя подсказки
+                        для пользователя. Также к достоинствам данного анализатора относится быстрое получение
+                        результатов исследования (35 сек), портативность прибора и удобство работы.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="client">
+    <div class="container">
+        <div class="client_block">
+            <h2 class="client_text">Наши клиенты</h2>
+            <div class="client_buttons">
+                <button class="client_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                <button class="client_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+            </div>
+        </div>
+        <div class="client_cards">
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client1.png' %}" alt=""></button>
+            </div>
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client2.png' %}" alt=""></button>
+            </div>
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client3.png' %}" alt=""></button>
+            </div>
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client4.png' %}" alt=""></button>
+            </div>
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client5.png' %}" alt=""></button>
+            </div>
+            <div class="client_card">
+                <img class="client_img" src="{% static 'img/client6.png' %}" alt=""></button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

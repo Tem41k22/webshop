@@ -1,0 +1,282 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}ДИАКОН-BET | Каталог | Ветеринарное оборудование{% endblock title %}
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock meta %}
+{% block content %}
+<section class="detail">
+    <div class="container">
+        <div class="detail_block">
+            <img class="detail_logo" src="{% static 'img/logo5.png' %}" alt="">
+            <h4 class="detail_text">— Ветеринарное оборудование</h4>
+            <a class="vet_btn" href="{% url 'cart:cart' %}" id="detail1"><img src="{% static 'img/basket.png' %}" alt=""></a>
+        </div>
+        <div class="detail_wrapper">
+            <div class="vet_spisok">
+                <ul class="vet_ul">
+                    <li class="vet_li" id="Vet"><img class="vet_image" src="{% static 'img/vet1.png' %}"
+                            alt="">Оборудование</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li"><a href="main/product/product.html">Ветеринарное оборудование</a></li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Иммуно-хроматографические анализаторы</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Электрокардиографы ветеринарные</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Биохимические анализаторы</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Гематологические анализаторы</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Коагулометры</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Экспресс-диагностика</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Терапия и хирургия</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Функциональная диагностика</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Рентген аппараты для ветеринарии</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Центрифуги</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Дозаторы</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Биологические микроскопы</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li">Разное</li>
+                    <div class="vet_line"></div>
+                    <li class="vet_li" id="Vet"><img class="vet_image" src="{% static 'img/milk.png' %}" alt="">Реагенты
+                    </li>
+                </ul>
+            </div>
+            <div class="detail_info">
+                <div class="detail_product">
+                    <div class="detail_image_div">
+                        <img class="detail_img1" src="{% static 'img/card1.png' %}" alt="">
+                    </div>
+                    <div class="detail_card1">
+                        <div class="detail_trade">
+                            <h4 class="detail_trade_text">Trade-in</h4>
+                        </div>
+                        <div class="detail_hit">
+                            <h4 class="detail_hit_Text">Хит продаж</h4>
+                        </div>
+                        <img class="detail_img2" src="{{product.get_title_image.image.url}}" alt="">
+                        <button class="detail_lypa"><span><img class="detail_lypa_img" src="{% static 'img/lypa.png' %}"
+                                    alt=""></span></button>
+                    </div>
+                    <div class="detail_card2">
+                        <h1 class="detail_title">{{product.name}}</h1>
+                        <div class="det_cat">
+                            <div class="detail_cat">
+                                <div class="detail_category">
+                                    <h4 class="detail_category_text">Категории:</h4>
+                                    <a class="detail_a" href="">{{product.category.name}}</a>
+                                </div>
+                                <div class="detail_brand">
+                                    <h4 class="detail_brand_text">Бренд:</h4>
+                                    <a class="detail_a" href="">Dymind</a>
+                                </div>
+                            </div>
+                            <img class="category_img" src="{% static 'img/category.png' %}" alt="">
+                        </div>
+                        <div class="detail_cat2">
+                            <h2 class="detail_price">{% if product.price == 0 %}Цена по запросу
+                                {% else %}{{product.price}}
+                                ₽{% endif %}</h2>
+                            <h4 class="detile_like_subtitle"><img class="det_img2" src="{% static 'img/vec.png' %}"
+                                    alt="">В
+                                наличии
+                            </h4>
+                            <a class="detail_question" href="">Задать вопрос</a>
+                        </div>
+                        <div class="detail_cat3">
+                            <div class="det_form">
+                                <form method="POST" class="detail_form" action="{% url 'cart:cart_add' product.id %}">
+                                    <button class="form_btn1">-</button>
+                                    {{cart_product_form.quantity}}
+                                    <button class="form_btn">+</button>
+                                    <button class="detail_corsina">Добавить в
+                                        корзину</button>
+                                        {% csrf_token %}
+                                </form>
+                            </div>
+                            <button class="like_button"><img class="like_detail" src="{% static 'img/Union.png' %}"
+                                    alt=""></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="info_block">
+                    <button class="info_btn">Описание</button>
+                    <button class="info_btn">Характеристики</button>
+                    <button class="info_btn">Доставка и оплата</button>
+                    <button class="info_btn">Пуско-наладка</button>
+                    <button class="info_btn">Отзывы</button>
+                </div>
+                <div class="info_card">
+                    <div class="card_property">
+                        <div class="card_property_name">
+                            <h4 class="card_property_text">Производительность</h4>
+                        </div>
+                        <div class="card_property_value">
+                            <h4 class="card_property_subtext">60 тестов/час</h4>
+                        </div>
+                    </div>
+                    <div class="card_property">
+                        <div class="card_property_name">
+                            <h4 class="card_property_text">Количество измеряемых параметров</h4>
+                        </div>
+                        <div class="card_property_value">
+                            <h4 class="card_property_subtext">23 параметра крови + 3 гистограммы, диаграмма
+                                распределения базофилов и 3 DIFF распределения — лазерные скаттерограммы</h4>
+                        </div>
+                    </div>
+                    <div class="card_property">
+                        <div class="card_property_name">
+                            <h4 class="card_property_text">Методы исследования</h4>
+                        </div>
+                        <div class="card_property_value">
+                            <h4 class="card_property_subtext">Дифференциация лейкоцитов на 5 подгрупп</h4>
+                        </div>
+                    </div>
+                    <div class="card_property">
+                        <div class="card_property_name">
+                            <h4 class="card_property_text">Используемые реагенты</h4>
+                        </div>
+                        <div class="card_property_value">
+                            <ul class="card_property_ul">
+                                <li class="card_property_li">кондуктометрия для определения RBC и PLT</li>
+                                <li class="card_property_li">фотометрический метод определения HGB</li>
+                                <li class="card_property_li">лазерная проточная цитометрия для определения WBC</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tovar_card">
+                    <div class="tovar_block">
+                        <h2 class="tovar_text">С этим товаром заказывают</h2>
+                        <div class="discount_buttons">
+                            <button class="discount_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                            <button class="discount_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="brand_cards">
+                        {% for product in product_list %}
+                        <div class="brand_card" id="tovar_Card1">
+                            <div class="brand_like">
+                                <img class="brand_img0" src="{{product.get_title_image.image.url}}" alt="">
+                                <button class="brand_btn0"><img class="brand_img" src="{% static 'img/like.png' %}"
+                                        alt=""></button>
+                            </div>
+                            <h4 class="brand_like_text">{{product.description3}}</h4>
+                            <h3 class="brand_like_title">{{product.name}}</h3>
+                            <h4 class="brand_like_price">{% if product.price == 0 %}Цена по запросу
+                                {% else %}{{product.price}}
+                                ₽{% endif %}</h4>
+                            <div class="brand_nal">
+                                <h4 class="brand_like_subtitle">{% if product.available %}<img class="brand_img2"
+                                        src="{% static 'img/vec.png' %}" alt="">В наличии {% else %}Нет в
+                                    наличии{% endif %}
+                                </h4>
+                                <button class="brand_btn3"><img class="brand_img4" src="{% static 'img/corsina.png' %}"
+                                        alt=""></button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tovar_card2">
+                    <div class="tovar_block2">
+                        <h2 class="tover_text2">С этим товаром заказывают</h2>
+                        <div class="discount_buttons">
+                            <button class="discount_btn"><img src="{% static 'img/left.png' %}" alt=""></button>
+                            <button class="discount_btn"><img src="{% static 'img/right.png' %}" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="vet_cards">
+                        {% for product in product_list %}
+                        <div class="vet_card">
+                            <div class="vet_like">
+                                <img class="vet_img0" src="{{product.get_title_image.image.url}}" alt="">
+                                <button class="vet_btn0"><span><img class="vet_img" src="{% static 'img/like.png' %}"
+                                            alt=""></span></button>
+                            </div>
+                            <h4 class="vet_like_text">Автоматические анализаторые</h4>
+                            <h3 class="vet_like_title">{{product.name}}</h3>
+                            <h4 class="vet_like_price">{% if product.price == 0 %}Цена по запросу
+                                {% else %}{{product.price}}
+                                ₽{% endif %}</h4>
+                            <div class="vet_nal">
+                                <h4 class="vet_like_subtitle">{% if product.available %}<img class="vet_img2"
+                                        src="{% static 'img/vec.png' %}" alt="">В наличии {% else %}Нет в
+                                    наличии{% endif %}
+                                </h4>
+                                <a href="{% url 'cart:cart_add' product.id %}" class="vet_btn3"><img class="vet_img4"
+                                        src="{% static 'img/corsina.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tovar_card3">
+                    <div class="tovar_block3">
+                        <h2 class="vopros_title">Остались вопросы?</h2>
+                        <form class="vopros_form" action="">
+                            <div class="form_grid">
+                                <div class="vopros_tovar1">
+                                    <div class="vopros_line">
+                                        <input class="vopros_input" type="text" placeholder="Имя">
+                                    </div>
+                                    <div class="vopros_line">
+                                        <input class="vopros_input" type="email" placeholder="E-mail">
+                                    </div>
+                                    <div class="vopros_line" id="grid1">
+                                        <input class="vopros_input" type="text" placeholder="Телефон">
+                                    </div>
+                                </div>
+                                <input class="vopros_input2" type="text" placeholder="Ваш вопрос">
+                            </div>
+                            <div class="vopros_square">
+                                <div class="vopros_captcha"></div>
+                                <button class="vopros_btn">Отправить</button>
+                            </div>
+
+                            <input class="vopros_box" type="checkbox" id="Check">
+                            <label for="Check"><span>Нажимая кнопку «Отправить», я даю свое <a href="">согласие на
+                                        обработку
+                                        моих
+                                        персональных
+                                        данных</a>, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ
+                                    «О
+                                    персональных
+                                    данных»,
+                                    на условиях и для целей, определенных в Согласии на обработку персональных
+                                    данных</span></label>
+                        </form>
+                    </div>
+                </div>
+                <div class="tovar_card4">
+                    <h2 class="new_text">Новости и акции</h2>
+                    <div class="new_cards">
+                        {% for news in news_list %}
+                        <div class="new_card">
+                            <img class="new_img" src="{{news.get_title_image.image.url}}" alt="">
+                            <h3 class="new_title">{{news.name}}</h3>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="new_buttons">
+                        <button class="new_btn1">Все новости <img class="new_image" src="{% static 'img/new.png' %}"
+                                alt=""></button>
+                        <button class="new_btn2">Все акции %</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+{% endblock content %}
